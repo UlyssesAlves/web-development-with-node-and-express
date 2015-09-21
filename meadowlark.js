@@ -1,15 +1,9 @@
 var express = require("express");
 var path = require("path");
 
-var app = express();
+var fortune = require("./lib/fortune.js");
 
-var frasesDeIncentivo = [
-	"Conquiste seus medos ou seus medos irão conquistar você.",
-	"Rios precisam de fontes.",
-	"Não tema o que você não conhece.",
-	"Você terá uma surpresa agradável.",
-	"Sempre que possível, mantenha as coisas simples."
-];
+var app = express();
 
 app.set('views', 'views');
 app.set('view engine', 'jade');
@@ -25,9 +19,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/about", function(req, res) {
-	var fraseDoDia = frasesDeIncentivo[Math.floor(Math.random() * frasesDeIncentivo.length)];
-
-	res.render("about", {fraseDoDia: fraseDoDia});
+	res.render("about", {fraseDoDia: fortune.getFortune() });
 });
 
 // Página 404 customizada.

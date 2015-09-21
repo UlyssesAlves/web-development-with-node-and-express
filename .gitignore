@@ -1,0 +1,14 @@
+# OS
+.DS_Stores
+Thumbs.db
+._*
+
+# npm
+npm-debug.log
+node_modules/
+
+# bower
+public/bower/
+
+# gulp
+# public/dist/

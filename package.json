@@ -1,0 +1,13 @@
+{
+  "name": "meadowlark",
+  "version": "1.0.0",
+  "description": "Site de exemplo do livro Web Development with Node and Express",
+  "main": "meadowlark.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  }
+}

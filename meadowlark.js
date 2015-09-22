@@ -22,6 +22,19 @@ app.get("/about", function(req, res) {
 	res.render("about", {fraseDoDia: fortune.getFortune() });
 });
 
+// Mostra as informações adicionais que o browser está enviando para o servidor.
+app.get("/headers", function(req, res) {
+	res.set("Content-Type", "text/plain");
+
+	var headersInfo = "";
+
+	for (var name in req.headers) {
+		headersInfo += name + ": " + req.headers[name] + "\n";
+	}
+
+	res.send(headersInfo);
+});
+
 // Página 404 customizada.
 app.use(function(req, res) {
 	res.status(404);

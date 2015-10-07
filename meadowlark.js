@@ -1,9 +1,13 @@
 var express = require("express");
 var path = require("path");
+var bodyParser = require("body-parser");
 
 var fortune = require("./lib/fortune.js");
 
 var app = express();
+
+// Utiliza o middleware body-parser para fazer a análise dos dados do corpo das requisições.
+app.use(bodyParser());
 
 app.set('views', 'views');
 app.set('view engine', 'jade');
